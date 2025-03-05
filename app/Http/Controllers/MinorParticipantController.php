@@ -1,0 +1,86 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\MinorParticipant;
+use Illuminate\Http\Request;
+
+class MinorParticipantController extends Controller
+{
+
+    public function index()
+    {
+        $participants = MinorParticipant::all();
+        return view('minor_participants.index', compact('participants'));
+    }
+
+
+    public function create()
+    {
+        return view('minor_participants.create');
+    }
+
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'full_name' => 'required|string|max:255',
+            'age' => 'required|integer',
+            'date_of_birth' => 'required|date',
+            'city' => 'required|string|max:255',
+            'father_or_guardian_name' => 'required|string|max:255',
+            'father_or_guardian_phone' => 'required|string|max:20',
+            'address' => 'required|string|max:255',
+            'observation' => 'nullable|string',
+        ]);
+
+        $data = $request->except('_token');
+
+        MinorParticipant::create($data);
+
+        return redirect()->route('minor_participants.index')->with('success', 'Participant created successfully.');
+    }
+
+
+
+    public function show(MinorParticipant $minorParticipant)
+    {
+        return view('minor_participants.show', compact('minorParticipant'));
+    }
+
+
+
+    public function edit(MinorParticipant $minorParticipant)
+    {
+        return view('minor_participants.edit', compact('minorParticipant'));
+    }
+
+
+    public function update(Request $request, MinorParticipant $minorParticipant)
+    {
+        $request->validate([
+            'full_name' => 'required|string|max:255',
+            'age' => 'required|integer',
+            'date_of_birth' => 'required|date',
+            'city' => 'required|string|max:255',
+            'father_or_guardian_name' => 'required|string|max:255',
+            'father_or_guardian_phone' => 'required|string|max:20',
+            'address' => 'required|string|max:255',
+            'observation' => 'nullable|string',
+        ]);
+
+        $data = $request->except('_token');
+
+        $minorParticipant->update($data);
+
+        return redirect()->route('minor_participants.index')->with('success', 'Participant updated successfully.');
+    }
+
+
+
+    public function destroy(MinorParticipant $minorParticipant)
+    {
+        $minorParticipant->delete();
+        return redirect()->route('minor_participants.index')->with('success', 'Participant deleted successfully.');
+    }
+}

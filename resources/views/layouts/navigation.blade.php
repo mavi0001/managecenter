@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-[#3A406D] border-b border-gray-100 fixed top-0 left-0 w-full">
+<nav x-data="{ open: false }" class="bg-[#3A406D] border-b border-gray-100 ">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -16,10 +16,14 @@
                         class="text-white hover:text-gray-300">
                         {{ __('Accueil') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"
+                    {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"
                         class="text-white hover:text-gray-300">
                         {{ __('Participants mineurs') }}
-                    </x-nav-link>
+                    </x-nav-link> --}}
+                    <x-nav-link :href="route('minor_participants.index')" :active="request()->routeIs('minor_participants.*')"
+                        class="text-white hover:text-gray-300">
+                {{ __('Participants mineurs') }}
+            </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"
                         class="text-white hover:text-gray-300">
                         {{ __('Participants adultes') }}
