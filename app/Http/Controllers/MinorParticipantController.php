@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\MinorParticipant;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class MinorParticipantController extends Controller
 {
+
+    public function exportPdf($id)
+    {
+        $minorParticipant = MinorParticipant::findOrFail($id);
+        $pdf = Pdf::loadView('minor_participants.export_pdf', compact('minorParticipant'));
+        
+            return $pdf->download('minor_participant_' . $minorParticipant->id . '.pdf');
+    }
 
     public function index()
     {

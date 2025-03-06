@@ -18,6 +18,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('minor_participants', MinorParticipantController::class);
+Route::middleware('auth')->group(function () {
+    Route::resource('minor_participants', MinorParticipantController::class);
+    Route::get('/minor-participants/{id}/export/pdf', [MinorParticipantController::class, 'exportPdf'])->name('minor_participants.export.pdf');
+    // Route::get('/minor-participants/{id}/export/excel', [MinorParticipantController::class, 'exportExcel'])->name('minor_participants.export.excel');
+});
 
 require __DIR__.'/auth.php';
