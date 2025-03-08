@@ -52,6 +52,10 @@
                 <span class="text-right">{{ $minorParticipant->father_or_guardian_phone }}</span>
             </div>
             <div class="flex justify-between items-center p-4 bg-[#F9FAF9] rounded-lg shadow-sm">
+                <span class="font-semibold">Activity name</span>
+                <span class="text-right">{{ $minorParticipant->activity_name }}</span>
+            </div>
+            <div class="flex justify-between items-center p-4 bg-[#F9FAF9] rounded-lg shadow-sm">
                 <span class="font-semibold">Address:</span>
                 <span class="text-right">{{ $minorParticipant->address }}</span>
             </div>

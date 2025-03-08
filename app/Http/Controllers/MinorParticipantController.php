@@ -13,7 +13,7 @@ class MinorParticipantController extends Controller
     {
         $minorParticipant = MinorParticipant::findOrFail($id);
         $pdf = Pdf::loadView('minor_participants.export_pdf', compact('minorParticipant'));
-        
+
             return $pdf->download('minor_participant_' . $minorParticipant->id . '.pdf');
     }
 
@@ -39,6 +39,7 @@ class MinorParticipantController extends Controller
             'city' => 'required|string|max:255',
             'father_or_guardian_name' => 'required|string|max:255',
             'father_or_guardian_phone' => 'required|string|max:20',
+            'activity_name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'observation' => 'nullable|string',
         ]);
@@ -74,6 +75,7 @@ class MinorParticipantController extends Controller
             'city' => 'required|string|max:255',
             'father_or_guardian_name' => 'required|string|max:255',
             'father_or_guardian_phone' => 'required|string|max:20',
+            'activity_name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'observation' => 'nullable|string',
         ]);

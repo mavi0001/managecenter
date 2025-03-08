@@ -17,6 +17,7 @@ class MinorParticipant extends Model
         'father_or_guardian_name',
         'father_or_guardian_phone',
         'address',
+        'activity_name',
         'observation',
     ];
 }

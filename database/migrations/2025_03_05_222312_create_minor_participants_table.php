@@ -19,6 +19,7 @@ return new class extends Migration
         $table->string('city');
         $table->string('father_or_guardian_name');
         $table->string('father_or_guardian_phone');
+        $table->string('activity_name');
         $table->string('address');
         $table->text('observation')->nullable();
         $table->timestamps();

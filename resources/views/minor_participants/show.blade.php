@@ -11,11 +11,13 @@
                 <p><strong class="font-semibold">City:</strong> {{ $minorParticipant->city }}</p>
                 <p><strong class="font-semibold">Father/Guardian Name:</strong> {{ $minorParticipant->father_or_guardian_name }}</p>
                 <p><strong class="font-semibold">Father/Guardian Phone:</strong> {{ $minorParticipant->father_or_guardian_phone }}</p>
+                <p><strong class="font-semibold">Activity name</strong> {{ $minorParticipant->activity_name }}</p>
                 <p><strong class="font-semibold">Address:</strong> {{ $minorParticipant->address }}</p>
                 <p><strong class="font-semibold">Observation:</strong> {{ $minorParticipant->observation }}</p>
             </div>
         </div>
     </div>
-    <a href="{{ route('minor_participants.index') }}" class="mt-6 inline-block bg-[#EF6B69] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">Back to List</a>
+    <a href="{{ route('minor_participants.index') }}" class="mt-6 inline-block bg-[#EF6B69]
+    text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">Back to List</a>
 </div>
 </x-app-layout>

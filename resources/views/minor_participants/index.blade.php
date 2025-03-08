@@ -9,7 +9,8 @@
                 <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Full Name</th>
                 <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Age</th>
                 <th class="px-6 py-3 text-left text-sm font-semibold uppercase">City</th>
-                <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Father or Guardian Name</th>
+                <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Activity name</th>
+                {{-- <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Father or Guardian Name</th> --}}
                 <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Actions</th>
             </tr>
         </thead>
@@ -19,7 +20,7 @@
                     <td class="px-6 py-4 text-[#3A406D]">{{ $participant->full_name }}</td>
                     <td class="px-6 py-4 text-[#3A406D]">{{ $participant->age }}</td>
                     <td class="px-6 py-4 text-[#3A406D]">{{ $participant->city }}</td>
-                    <td class="px-6 py-4 text-[#3A406D]">{{ $participant->father_or_guardian_name }}</td>
+                    <td class="px-6 py-4 text-[#3A406D]">{{ $participant->activity_name }}</td>
                     <td class="px-6 py-4 space-x-2">
                         <a href="{{ route('minor_participants.show', $participant->id) }}" class="bg-[#9CAEEB] text-[#F9FAF9] px-3 py-1 rounded-lg hover:bg-[#3A406D] transition duration-300">View</a>
                         <a href="{{ route('minor_participants.edit', $participant->id) }}" class="bg-[#EF6B69] text-[#F9FAF9] px-3 py-1 rounded-lg hover:bg-[#3A406D] transition duration-300">Edit</a>

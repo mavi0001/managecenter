@@ -41,6 +41,13 @@
                 <input type="text" name="father_or_guardian_phone" id="father_or_guardian_phone" value="{{ $minorParticipant->father_or_guardian_phone }}" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
             </div>
 
+            <div class="form-group">
+                <label for="activity_name" class="block text-sm font-medium text-[#3A406D]">Activity name</label>
+                <input type="text" name="activity_name" id="activity_name" value="{{ $minorParticipant->activity_name }}"
+                class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69]
+                focus:border-[#EF6B69] transition duration-300" required>
+            </div>
+
             <!-- Address -->
             <div class="form-group">
                 <label for="address" class="block text-sm font-medium text-[#3A406D]">Address</label>
