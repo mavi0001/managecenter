@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
 <div class="container mx-auto p-6 bg-[#F9FAF9] min-h-screen">
     <h1 class="text-3xl font-bold text-[#3A406D] mb-6">Edit Participant</h1>
     <form action="{{ route('minor_participants.update', $minorParticipant->id) }}" method="POST" class="bg-white p-6 rounded-lg shadow-lg border border-[#9CAEEB]">
@@ -60,4 +58,4 @@
         <button type="submit" class="mt-6 bg-[#EF6B69] text-[#F9FAF9] px-6 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300 w-full sm:w-auto">Update</button>
     </form>
 </div>
-@endsection
+</x-app-layout>

@@ -1,6 +1,5 @@
-@extends('layouts.app')
+<x-app-layout>
 
-@section('content')
 <div class="container mx-auto p-6 bg-[#F9FAF9] min-h-screen">
     <h1 class="text-3xl font-bold text-[#3A406D] mb-6">Participant Details</h1>
     <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-[#9CAEEB]">
@@ -19,4 +18,4 @@
     </div>
     <a href="{{ route('minor_participants.index') }}" class="mt-6 inline-block bg-[#EF6B69] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">Back to List</a>
 </div>
-@endsection
+</x-app-layout>

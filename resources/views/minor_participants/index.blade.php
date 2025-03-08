@@ -1,6 +1,5 @@
-@extends('layouts.app')
+<x-app-layout>
 
-@section('content')
 <div class="container mx-auto p-6 bg-[#F9FAF9] min-h-screen">
     <h1 class="text-3xl font-bold text-[#3A406D] mb-6">Minor Participants</h1>
     <a href="{{ route('minor_participants.create') }}" class="bg-[#EF6B69] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300 mb-6 inline-block">Add New Participant</a>
@@ -37,4 +36,5 @@
         </tbody>
     </table>
 </div>
-@endsection
+
+</x-app-layout>
