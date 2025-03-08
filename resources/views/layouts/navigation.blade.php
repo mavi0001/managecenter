@@ -16,15 +16,11 @@
                         class="text-white hover:text-[#EF6B69]">
                         {{ __('Accueil') }}
                     </x-nav-link>
-                    {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"
-                        class="text-white hover:text-[#EF6B69]">
-                        {{ __('Participants mineurs') }}
-                    </x-nav-link> --}}
                     <x-nav-link :href="route('minor_participants.index')" :active="request()->routeIs('minor_participants.*')"
                         class="text-white hover:text-[#EF6B69]">
-                {{ __('Participants mineurs') }}
-            </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"
+                        {{ __('Participants mineurs') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('adult-participants.index')" :active="request()->routeIs('adult-participants.*')"
                         class="text-white hover:text-[#EF6B69]">
                         {{ __('Participants adultes') }}
                     </x-nav-link>
@@ -67,7 +63,7 @@
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2
-                rounded-md text-gray-400 hover:text-gray-500
+                rounded-md text-white hover:text-white
                 hover:bg-gray-100 focus:outline-none
                 focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -87,7 +83,7 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"
-                class="text-[#3A406D] hover:text-[#EF6B69]">
+                class="text-white hover:text-white">
                 {{ __('Home') }}
             </x-responsive-nav-link>
         </div>
@@ -95,12 +91,12 @@
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                <div class="font-medium text-base text-white">{{ Auth::user()->name }}</div>
+                <div class="font-medium text-sm text-white">{{ Auth::user()->email }}</div>
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')" class="text-[#3A406D] hover:text-[#EF6B69]">
+                <x-responsive-nav-link :href="route('profile.edit')" class="text-white hover:text-white">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
 
@@ -109,7 +105,7 @@
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
-                    this.closest('form').submit();" class="text-[#3A406D] hover:text-[#EF6B69]">
+                    this.closest('form').submit();" class="text-white hover:text-white">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>

@@ -2,8 +2,8 @@
     <div class="py-12 bg-[#F9FAF9] min-h-screen flex items-center justify-center">
         <div class="max-w-4xl w-full mx-auto px-6">
             <div class="bg-white p-8 rounded-lg shadow-lg border border-[#9CAEEB]">
-                <h1 class="text-3xl font-bold text-[#3A406D] mb-6">Add New Minor Participant</h1>
-                <form action="{{ route('minor_participants.store') }}" method="POST">
+                <h1 class="text-3xl font-bold text-[#3A406D] mb-6">Add New Participant</h1>
+                <form action="{{ route('adult-participants.store') }}" method="POST">
                     @csrf
                     <div class="space-y-4">
                         <!-- Full Name -->
@@ -18,6 +18,12 @@
                             <input type="number" name="age" id="age" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
                         </div>
 
+                        <!-- CIN -->
+                        <div>
+                            <label for="cin" class="block text-sm font-medium text-[#3A406D]">CIN</label>
+                            <input type="text" name="cin" id="cin" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
+                        </div>
+
                         <!-- Date of Birth -->
                         <div>
                             <label for="date_of_birth" class="block text-sm font-medium text-[#3A406D]">Date of Birth</label>
@@ -30,28 +36,37 @@
                             <input type="text" name="city" id="city" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
                         </div>
 
-                        <!-- Father/Guardian Name -->
+                        <!-- Gender -->
                         <div>
-                            <label for="father_or_guardian_name" class="block text-sm font-medium text-[#3A406D]">Father/Guardian Name</label>
-                            <input type="text" name="father_or_guardian_name" id="father_or_guardian_name" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
+                            <label for="gender" class="block text-sm font-medium text-[#3A406D]">Gender</label>
+                            <select name="gender" id="gender" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
                         </div>
 
-                        <!-- Father/Guardian Phone -->
+                        <!-- Email -->
                         <div>
-                            <label for="father_or_guardian_phone" class="block text-sm font-medium text-[#3A406D]">Father/Guardian Phone</label>
-                            <input type="text" name="father_or_guardian_phone" id="father_or_guardian_phone" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
-                        </div>
-
-                        <!-- Activity Name -->
-                        <div>
-                            <label for="activity_name" class="block text-sm font-medium text-[#3A406D]">Activity Name</label>
-                            <input type="text" name="activity_name" id="activity_name" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
+                            <label for="email" class="block text-sm font-medium text-[#3A406D]">Email</label>
+                            <input type="email" name="email" id="email" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
                         </div>
 
                         <!-- Address -->
                         <div>
                             <label for="address" class="block text-sm font-medium text-[#3A406D]">Address</label>
                             <input type="text" name="address" id="address" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label for="phone_number" class="block text-sm font-medium text-[#3A406D]">Phone Number</label>
+                            <input type="text" name="phone_number" id="phone_number" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
+                        </div>
+
+                        <!-- Activity Name -->
+                        <div>
+                            <label for="activity_name" class="block text-sm font-medium text-[#3A406D]">Activity Name</label>
+                            <input type="text" name="activity_name" id="activity_name" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
                         </div>
 
                         <!-- Observation -->
