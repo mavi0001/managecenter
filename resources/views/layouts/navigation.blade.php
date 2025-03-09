@@ -24,7 +24,7 @@
                         class="text-white hover:text-[#EF6B69]">
                         {{ __('Participants adultes') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"
+                    <x-nav-link :href="route('minor-activities.index')" :active="request()->routeIs('minor-activities.*')"
                         class="text-white hover:text-[#EF6B69]">
                         {{ __(' Activités mineurs') }}
                     </x-nav-link>
