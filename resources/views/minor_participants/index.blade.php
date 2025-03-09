@@ -25,14 +25,14 @@
                                 <td class="px-6 py-4 text-[#3A406D]">{{ $participant->city }}</td>
                                 <td class="px-6 py-4 text-[#3A406D]">{{ $participant->activity_name }}</td>
                                 <td class="px-6 py-4 space-x-2">
-                                    <a href="{{ route('minor_participants.show', $participant->id) }}" class="bg-[#9CAEEB] text-[#F9FAF9] px-3 py-1 rounded-lg hover:bg-[#3A406D] transition duration-300">View</a>
-                                    <a href="{{ route('minor_participants.edit', $participant->id) }}" class="bg-[#EF6B69] text-[#F9FAF9] px-3 py-1 rounded-lg hover:bg-[#3A406D] transition duration-300">Edit</a>
+                                    <a href="{{ route('minor_participants.show', $participant->id) }}" class="bg-[#9CAEEB] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">View</a>
+                                    <a href="{{ route('minor_participants.edit', $participant->id) }}" class="bg-[#EF6B69] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">Edit</a>
                                     <form action="{{ route('minor_participants.destroy', $participant->id) }}" method="POST" class="inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="bg-[#EF6B69] text-[#F9FAF9] px-3 py-1 rounded-lg hover:bg-[#3A406D] transition duration-300">Delete</button>
                                     </form>
-                                    <a href="{{ route('minor_participants.export.pdf', $participant->id) }}" class="bg-[#3A406D] text-[#F9FAF9] px-3 py-1 rounded-lg hover:bg-[#EF6B69] transition duration-300">PDF</a>
+                                    <a href="{{ route('minor_participants.export.pdf', $participant->id) }}" class="bg-[#3A406D] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#EF6B69] transition duration-300">PDF</a>
                                 </td>
                             </tr>
                         @endforeach

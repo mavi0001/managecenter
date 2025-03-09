@@ -26,7 +26,11 @@
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"
                         class="text-white hover:text-[#EF6B69]">
-                        {{ __(' Activités') }}
+                        {{ __(' Activités mineurs') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('adult-activities.index')" :active="request()->routeIs('adult-activities.*')"
+                        class="text-white hover:text-[#EF6B69]">
+                        {{ __(' Activités adults') }}
                     </x-nav-link>
                 </div>
             </div>
