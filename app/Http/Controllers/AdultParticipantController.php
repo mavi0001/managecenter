@@ -8,9 +8,18 @@ use Illuminate\Http\Request;
 
 class AdultParticipantController extends Controller
 {
-    public function index()
+
+    public function index(Request $request)
     {
-        $participants = AdultParticipant::all();
+        $search = $request->query('search');
+
+        $participants = AdultParticipant::when($search, function ($query, $search) {
+            return $query->where('full_name', 'like', "%{$search}%")
+                        ->orWhere('city', 'like', "%{$search}%")
+                        ->orWhere('cin', 'like', "%{$search}%")
+                        ->orWhere('activity_name', 'like', "%{$search}%");
+        })->get();
+
         return view('adult_participants.index', compact('participants'));
     }
 

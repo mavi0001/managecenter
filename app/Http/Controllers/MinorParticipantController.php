@@ -17,9 +17,16 @@ class MinorParticipantController extends Controller
             return $pdf->download('minor_participant_' . $minorParticipant->id . '.pdf');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $participants = MinorParticipant::all();
+        $search = $request->query('search');
+
+        $participants = MinorParticipant::when($search, function ($query, $search) {
+            return $query->where('full_name', 'like', "%{$search}%")
+                        ->orWhere('city', 'like', "%{$search}%")
+                        ->orWhere('activity_name', 'like', "%{$search}%");
+        })->get();
+
         return view('minor_participants.index', compact('participants'));
     }
 

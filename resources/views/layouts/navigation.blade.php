@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        {{-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800" /> --}}
+                        {{-- <x-application-logo class="block h-9 w-auto fill-current text-[#EF6B69]" /> --}}
                     </a>
                 </div>
 
@@ -14,23 +14,23 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"
                         class="text-white hover:text-[#EF6B69]">
-                        {{ __('Accueil') }}
+                        {{ __('Home') }}
                     </x-nav-link>
                     <x-nav-link :href="route('minor_participants.index')" :active="request()->routeIs('minor_participants.*')"
                         class="text-white hover:text-[#EF6B69]">
-                        {{ __('Participants mineurs') }}
+                        {{ __('Minor Participants') }}
                     </x-nav-link>
                     <x-nav-link :href="route('adult-participants.index')" :active="request()->routeIs('adult-participants.*')"
                         class="text-white hover:text-[#EF6B69]">
-                        {{ __('Participants adultes') }}
+                        {{ __('Adulte Participants') }}
                     </x-nav-link>
                     <x-nav-link :href="route('minor-activities.index')" :active="request()->routeIs('minor-activities.*')"
                         class="text-white hover:text-[#EF6B69]">
-                        {{ __(' Activités mineurs') }}
+                        {{ __('Minor Activities') }}
                     </x-nav-link>
                     <x-nav-link :href="route('adult-activities.index')" :active="request()->routeIs('adult-activities.*')"
                         class="text-white hover:text-[#EF6B69]">
-                        {{ __(' Activités adults') }}
+                        {{ __('Adult Activities') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -47,8 +47,8 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')" class="text-gray-800">
-                            {{ __('Mon profile') }}
+                        <x-dropdown-link :href="route('profile.edit')" class="text-[#EF6B69]">
+                            {{ __('My profile') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -56,8 +56,8 @@
                             @csrf
 
                             <x-dropdown-link :href="route('logout')"
-                            onclick="event.preventDefault(); this.closest('form').submit();" class="text-gray-800">
-                                {{ __('Déconnexion') }}
+                            onclick="event.preventDefault(); this.closest('form').submit();" class="text-[#EF6B69]">
+                                {{ __('Log out') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -69,7 +69,7 @@
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2
                 rounded-md text-white hover:text-white
                 hover:bg-gray-100 focus:outline-none
-                focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                focus:bg-gray-100 focus:text-white transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }"
                         class="inline-flex" stroke-linecap="round" stroke-linejoin="round"
