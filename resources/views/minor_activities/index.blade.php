@@ -59,6 +59,10 @@
                     </tbody>
                 </table>
             </div>
+            <!-- Pagination Links -->
+            <div class="mt-6">
+                {{ $activities->links() }}
+            </div>
         </div>
     </div>
 </x-app-layout>

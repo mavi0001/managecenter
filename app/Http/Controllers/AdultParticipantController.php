@@ -18,7 +18,7 @@ class AdultParticipantController extends Controller
                         ->orWhere('city', 'like', "%{$search}%")
                         ->orWhere('cin', 'like', "%{$search}%")
                         ->orWhere('activity_name', 'like', "%{$search}%");
-        })->get();
+        })->paginate(3);
 
         return view('adult_participants.index', compact('participants'));
     }

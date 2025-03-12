@@ -20,7 +20,7 @@ class MinorActivityController extends Controller
                             ->orWhere('start_date', 'like', "%{$search}%")
                             ->orWhere('end_date', 'like', "%{$search}%");
             })
-            ->get();
+            ->paginate(2);
 
         return view('minor_activities.index', compact('activities'));
     }
