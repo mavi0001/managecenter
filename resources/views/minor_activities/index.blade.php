@@ -6,6 +6,27 @@
                 <a href="{{ route('minor-activities.create') }}" class="bg-[#EF6B69] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">Add New Activity</a>
             </div>
 
+            <!-- Search Bar -->
+            <div class="mb-6">
+                <form action="{{ route('minor-activities.index') }}" method="GET">
+                    <div class="flex items-center">
+                        <input
+                            type="text"
+                            name="search"
+                            placeholder="Search by name, city, or activity..."
+                            value="{{ request('search') }}"
+                            class="w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300"
+                        />
+                        <button
+                            type="submit"
+                            class="ml-2 bg-[#EF6B69] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300"
+                        >
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+
             <div class="bg-white rounded-lg shadow-lg border border-[#9CAEEB] overflow-hidden">
                 <table class="min-w-full">
                     <thead class="bg-[#3A406D] text-[#F9FAF9]">

@@ -38,7 +38,7 @@
 
                         <!-- Province -->
                         <div>
-                            <label for="province" class="block text-sm font-medium text-[#3A406D]">Province</label>
+                            <label for="province" class="block text-sm font-medium text-[#3A406D]">Region</label>
                             <input type="text" name="province" id="province" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
                         </div>
 

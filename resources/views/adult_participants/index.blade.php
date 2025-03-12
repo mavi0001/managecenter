@@ -6,7 +6,7 @@
                 <a href="{{ route('adult-participants.create') }}" class="bg-[#EF6B69] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">Add New Participant</a>
             </div>
 
-
+            {{-- Search bar --}}
             <div class="mb-6">
                 <form action="{{ route('adult-participants.index') }}" method="GET">
                     <div class="flex items-center">

@@ -7,9 +7,21 @@ use Illuminate\Http\Request;
 
 class MinorActivityController extends Controller
 {
-    public function index()
+
+    public function index(Request $request)
     {
-        $activities = MinorActivity::all();
+        $search = $request->query('search');
+
+        $activities = MinorActivity::query()
+            ->when($search, function ($query, $search) {
+                return $query->where('activity_name', 'like', "%{$search}%")
+                            ->orWhere('city', 'like', "%{$search}%")
+                            ->orWhere('year', 'like', "%{$search}%")
+                            ->orWhere('start_date', 'like', "%{$search}%")
+                            ->orWhere('end_date', 'like', "%{$search}%");
+            })
+            ->get();
+
         return view('minor_activities.index', compact('activities'));
     }
 

@@ -9,7 +9,7 @@
                     <p><strong>Start Date:</strong> {{ $adultActivity->start_date }}</p>
                     <p><strong>End Date:</strong> {{ $adultActivity->end_date }}</p>
                     <p><strong>Location Name:</strong> {{ $adultActivity->location_name }}</p>
-                    <p><strong>Province:</strong> {{ $adultActivity->province }}</p>
+                    <p><strong>Region:</strong> {{ $adultActivity->province }}</p>
                     <p><strong>Number of Participants:</strong> {{ $adultActivity->number_of_participants }}</p>
                     <p><strong>City:</strong> {{ $adultActivity->city }}</p>
                     <p><strong>Organizer Names:</strong> {{ $adultActivity->organizer_names }}</p>

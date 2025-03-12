@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Http\Controllers;
 
 use App\Models\AdultActivity;
@@ -9,10 +7,20 @@ use Illuminate\Http\Request;
 
 class AdultActivityController extends Controller
 {
-    
-    public function index()
+    public function index(Request $request)
     {
-        $activities = AdultActivity::all();
+        $search = $request->query('search');
+
+        $activities = AdultActivity::query()
+            ->when($search, function ($query, $search) {
+                return $query->where('activity_name', 'like', "%{$search}%")
+                            ->orWhere('city', 'like', "%{$search}%")
+                            ->orWhere('year', 'like', "%{$search}%")
+                            ->orWhere('start_date', 'like', "%{$search}%")
+                            ->orWhere('end_date', 'like', "%{$search}%");
+            })
+            ->get();
+
         return view('adult_activities.index', compact('activities'));
     }
 
