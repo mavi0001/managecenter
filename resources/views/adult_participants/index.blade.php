@@ -48,14 +48,29 @@
                                 <td class="px-6 py-4 text-[#3A406D]">{{ $participant->city }}</td>
                                 <td class="px-6 py-4 text-[#3A406D]">{{ $participant->activity_name }}</td>
                                 <td class="px-6 py-4 space-x-2">
-                                    <a href="{{ route('adult-participants.show', $participant->id) }}" class="bg-[#9CAEEB] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">View</a>
-                                    <a href="{{ route('adult-participants.edit', $participant->id) }}" class="bg-[#EF6B69] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">Edit</a>
+                                    <!-- View Button -->
+                                    <a href="{{ route('adult-participants.show', $participant->id) }}" class="bg-[#9CAEEB] text-[#F9FAF9] px-3 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300" title="View">
+                                        <i class="fas fa-eye fa-sm"></i> 
+                                    </a>
+
+                                    <!-- Edit Button -->
+                                    <a href="{{ route('adult-participants.edit', $participant->id) }}" class="bg-[#EF6B69] text-[#F9FAF9] px-3 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300" title="Edit">
+                                        <i class="fas fa-edit fa-sm"></i>
+                                    </a>
+
+                                    <!-- Delete Button -->
                                     <form action="{{ route('adult-participants.destroy', $participant->id) }}" method="POST" class="inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="bg-[#EF6B69] text-[#F9FAF9] px-3 py-1 rounded-lg hover:bg-[#3A406D] transition duration-300">Delete</button>
+                                        <button type="submit" class="bg-[#EF6B69] text-[#F9FAF9] px-3 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300" title="Delete">
+                                            <i class="fas fa-trash fa-sm"></i>
+                                        </button>
                                     </form>
-                                    <a href="{{ route('minor_participants.export.pdf', $participant->id) }}" class="bg-[#3A406D] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#EF6B69] transition duration-300">PDF</a>
+
+                                    <!-- PDF Button -->
+                                    <a href="{{ route('minor_participants.export.pdf', $participant->id) }}" class="bg-[#3A406D] text-[#F9FAF9] px-3 py-2 rounded-lg hover:bg-[#EF6B69] transition duration-300" title="Export PDF">
+                                        <i class="fas fa-file-pdf fa-sm"></i>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

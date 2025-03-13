@@ -1,9 +1,9 @@
 <x-app-layout>
-    <div class="py-12 bg-[#F9FAF9] min-h-screen">
+    <div class="py-12 bg-[#eff2f3] min-h-screen">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center mb-6">
-                <h1 class="text-3xl font-bold text-[#3A406D]">Minor Participants</h1>
-                <a href="{{ route('minor_participants.create') }}" class="bg-[#EF6B69] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">Add New Participant</a>
+                <h1 class="text-3xl font-bold text-[#191565]">Minor Participants</h1>
+                <a href="{{ route('minor_participants.create') }}" class="bg-[#DB1E59] text-white px-4 py-2 rounded-lg hover:bg-[#84D1C7] transition duration-300">Add New Participant</a>
             </div>
 
             <!-- Search Bar -->
@@ -15,11 +15,11 @@
                             name="search"
                             placeholder="Search by name, city, or activity..."
                             value="{{ request('search') }}"
-                            class="w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300"
+                            class="w-full px-4 py-2 border border-[#B2BABD] rounded-lg focus:ring-[#DB1E59] focus:border-[#DB1E59] transition duration-300"
                         />
                         <button
                             type="submit"
-                            class="ml-2 bg-[#EF6B69] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300"
+                            class="ml-2 bg-[#DB1E59] text-white px-4 py-2 rounded-lg hover:bg-[#84D1C7] transition duration-300"
                         >
                             Search
                         </button>
@@ -28,9 +28,9 @@
             </div>
 
             <!-- Participants Table -->
-            <div class="bg-white rounded-lg shadow-lg border border-[#9CAEEB] overflow-hidden">
+            <div class="bg-white rounded-lg shadow-lg border border-[#B2BABD] overflow-hidden">
                 <table class="min-w-full">
-                    <thead class="bg-[#3A406D] text-[#F9FAF9]">
+                    <thead class="bg-[#191565] text-white">
                         <tr>
                             <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Full Name</th>
                             <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Age</th>
@@ -39,22 +39,37 @@
                             <th class="px-6 py-3 text-left text-sm font-semibold uppercase">Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-[#9CAEEB]">
+                    <tbody class="divide-y divide-[#B2BABD]">
                         @foreach ($participants as $participant)
-                            <tr class="hover:bg-[#9CAEEB]/10 transition duration-300">
-                                <td class="px-6 py-4 text-[#3A406D]">{{ $participant->full_name }}</td>
-                                <td class="px-6 py-4 text-[#3A406D]">{{ $participant->age }}</td>
-                                <td class="px-6 py-4 text-[#3A406D]">{{ $participant->city }}</td>
-                                <td class="px-6 py-4 text-[#3A406D]">{{ $participant->activity_name }}</td>
+                            <tr class="hover:bg-[#84D1C7]/10 transition duration-300">
+                                <td class="px-6 py-4 text-[#191565]">{{ $participant->full_name }}</td>
+                                <td class="px-6 py-4 text-[#191565]">{{ $participant->age }}</td>
+                                <td class="px-6 py-4 text-[#191565]">{{ $participant->city }}</td>
+                                <td class="px-6 py-4 text-[#191565]">{{ $participant->activity_name }}</td>
                                 <td class="px-6 py-4 space-x-2">
-                                    <a href="{{ route('minor_participants.show', $participant->id) }}" class="bg-[#9CAEEB] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">View</a>
-                                    <a href="{{ route('minor_participants.edit', $participant->id) }}" class="bg-[#EF6B69] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300">Edit</a>
+                                    <!-- View Button -->
+                                    <a href="{{ route('minor_participants.show', $participant->id) }}" class=" text-[#84D1C7] px-3 py-2 rounded-lg hover:bg-[#191565] transition duration-300">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+
+                                    <!-- Edit Button -->
+                                    <a href="{{ route('minor_participants.edit', $participant->id) }}" class="text-[#D2C1D6] px-3 py-2 rounded-lg hover:bg-[#191565] transition duration-300">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+
+                                    <!-- Delete Button -->
                                     <form action="{{ route('minor_participants.destroy', $participant->id) }}" method="POST" class="inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="bg-[#EF6B69] text-[#F9FAF9] px-3 py-1 rounded-lg hover:bg-[#3A406D] transition duration-300">Delete</button>
+                                        <button type="submit" class=" text-[#DB1E59] px-3 py-2 rounded-lg hover:bg-[#84D1C7] transition duration-300">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
                                     </form>
-                                    <a href="{{ route('minor_participants.export.pdf', $participant->id) }}" class="bg-[#3A406D] text-[#F9FAF9] px-4 py-2 rounded-lg hover:bg-[#EF6B69] transition duration-300">PDF</a>
+
+                                    <!-- PDF Button -->
+                                    <a href="{{ route('minor_participants.export.pdf', $participant->id) }}" class=" text-[#191565] px-3 py-2 rounded-lg hover:bg-[#DB1E59] transition duration-300">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
