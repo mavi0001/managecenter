@@ -48,12 +48,12 @@
                                 <td class="px-6 py-4 text-[#191565]">{{ $participant->activity_name }}</td>
                                 <td class="px-6 py-4 space-x-2">
                                     <!-- View Button -->
-                                    <a href="{{ route('minor_participants.show', $participant->id) }}" class=" text-[#84D1C7] px-3 py-2 rounded-lg hover:bg-[#191565] transition duration-300">
+                                    <a href="{{ route('minor_participants.show', $participant->id) }}" class=" text-[#84D1C7] px-3 py-2 rounded-lg hover:bg-[#84D1C7] hover:text-white transition duration-300">
                                         <i class="fas fa-eye"></i>
                                     </a>
 
                                     <!-- Edit Button -->
-                                    <a href="{{ route('minor_participants.edit', $participant->id) }}" class="text-[#D2C1D6] px-3 py-2 rounded-lg hover:bg-[#191565] transition duration-300">
+                                    <a href="{{ route('minor_participants.edit', $participant->id) }}" class="text-[#D2C1D6] px-3 py-2 rounded-lg hover:bg-[#D2C1D6] hover:text-white transition duration-300">
                                         <i class="fas fa-edit"></i>
                                     </a>
 
@@ -61,13 +61,13 @@
                                     <form action="{{ route('minor_participants.destroy', $participant->id) }}" method="POST" class="inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class=" text-[#DB1E59] px-3 py-2 rounded-lg hover:bg-[#84D1C7] transition duration-300">
+                                        <button type="submit" class=" text-[#DB1E59] px-3 py-2 rounded-lg hover:bg-[#DB1E59] hover:text-white transition duration-300">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
 
                                     <!-- PDF Button -->
-                                    <a href="{{ route('minor_participants.export.pdf', $participant->id) }}" class=" text-[#191565] px-3 py-2 rounded-lg hover:bg-[#DB1E59] transition duration-300">
+                                    <a href="{{ route('minor_participants.export.pdf', $participant->id) }}" class=" text-[#191565] px-3 py-2 rounded-lg hover:bg-[#191565] hover:text-white transition duration-300">
                                         <i class="fas fa-file-pdf"></i>
                                     </a>
                                 </td>

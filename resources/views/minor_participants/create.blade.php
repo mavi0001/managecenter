@@ -43,9 +43,18 @@
                         </div>
 
                         <!-- Activity Name -->
-                        <div>
+                        {{-- <div>
                             <label for="activity_name" class="block text-sm font-medium text-[#1E3A8A]">Activity Name</label>
                             <input type="text" name="activity_name" id="activity_name" class="mt-1 block w-full px-4 py-2 border border-[#6B7280] rounded-lg focus:ring-[#2563EB] focus:border-[#2563EB] transition duration-300" required>
+                        </div> --}}
+                        <div class="mb-4">
+                            <label for="minor_activity_id" class="block text-sm font-medium text-gray-700">Select Activity</label>
+                            <select name="minor_activity_id" id="minor_activity_id" class="mt-1 block w-full px-3 py-2 border border-[#DB1E59] rounded-md shadow-sm focus:outline-none focus:ring-[#DB1E59] focus:border-[#DB1E59]">
+                                <option value="">Select an activity</option>
+                                @foreach ($activities as $activity)
+                                    <option value="{{ $activity->id }}">{{ $activity->activity_name }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <!-- Address -->

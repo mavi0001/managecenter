@@ -31,10 +31,23 @@
                             <label for="father_or_guardian_phone" class="block text-sm font-medium">Father/Guardian Phone</label>
                             <input type="text" name="father_or_guardian_phone" id="father_or_guardian_phone" value="{{ $minorParticipant->father_or_guardian_phone }}" class="mt-1 block w-full px-4 py-2 border border-[#D2C1D6] rounded-lg focus:ring-[#DB1E59] focus:border-[#DB1E59] transition duration-300" required>
                         </div>
-                        <div>
+
+                        <div class="mb-4">
+                            <label for="minor_activity_id" class="block text-sm font-medium text-gray-700">Select Activity</label>
+                            <select name="minor_activity_id" id="minor_activity_id" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#DB1E59] focus:border-[#DB1E59]">
+                                <option value="">Select an activity</option>
+                                @foreach ($activities as $activity)
+                                    <option value="{{ $activity->id }}" {{ $minorParticipant->minor_activity_id == $activity->id ? 'selected' : '' }}>
+                                        {{ $activity->activity_name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        {{-- <div>
                             <label for="activity_name" class="block text-sm font-medium">Activity Name</label>
                             <input type="text" name="activity_name" id="activity_name" value="{{ $minorParticipant->activity_name }}" class="mt-1 block w-full px-4 py-2 border border-[#D2C1D6] rounded-lg focus:ring-[#DB1E59] focus:border-[#DB1E59] transition duration-300" required>
-                        </div>
+                        </div> --}}
                         <div>
                             <label for="address" class="block text-sm font-medium">Address</label>
                             <input type="text" name="address" id="address" value="{{ $minorParticipant->address }}" class="mt-1 block w-full px-4 py-2 border border-[#D2C1D6] rounded-lg focus:ring-[#DB1E59] focus:border-[#DB1E59] transition duration-300" required>

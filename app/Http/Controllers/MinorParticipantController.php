@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MinorParticipant;
+use App\Models\MinorActivity;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
@@ -33,27 +34,27 @@ class MinorParticipantController extends Controller
 
     public function create()
     {
-        return view('minor_participants.create');
+        $activities = MinorActivity::all();
+
+        return view('minor_participants.create', compact('activities'));
     }
 
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'full_name' => 'required|string|max:255',
             'age' => 'required|integer',
             'date_of_birth' => 'required|date',
             'city' => 'required|string|max:255',
             'father_or_guardian_name' => 'required|string|max:255',
-            'father_or_guardian_phone' => 'required|string|max:20',
-            'activity_name' => 'required|string|max:255',
+            'father_or_guardian_phone' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'observation' => 'nullable|string',
+            'minor_activity_id' => 'nullable|exists:minor_activities,id',
         ]);
 
-        $data = $request->except('_token');
-
-        MinorParticipant::create($data);
+        MinorParticipant::create($validatedData);
 
         return redirect()->route('minor_participants.index')->with('success', 'Participant created successfully.');
     }
@@ -69,27 +70,26 @@ class MinorParticipantController extends Controller
 
     public function edit(MinorParticipant $minorParticipant)
     {
-        return view('minor_participants.edit', compact('minorParticipant'));
+        $activities = MinorActivity::all();
+        return view('minor_participants.edit', compact('minorParticipant', 'activities'));
     }
 
 
     public function update(Request $request, MinorParticipant $minorParticipant)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'full_name' => 'required|string|max:255',
             'age' => 'required|integer',
             'date_of_birth' => 'required|date',
             'city' => 'required|string|max:255',
             'father_or_guardian_name' => 'required|string|max:255',
-            'father_or_guardian_phone' => 'required|string|max:20',
-            'activity_name' => 'required|string|max:255',
+            'father_or_guardian_phone' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'observation' => 'nullable|string',
+            'minor_activity_id' => 'nullable|exists:minor_activities,id',
         ]);
 
-        $data = $request->except('_token');
-
-        $minorParticipant->update($data);
+        $minorParticipant->update($validatedData);
 
         return redirect()->route('minor_participants.index')->with('success', 'Participant updated successfully.');
     }

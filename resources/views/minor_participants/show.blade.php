@@ -10,7 +10,8 @@
                     <p><strong class="font-semibold">City:</strong> {{ $minorParticipant->city }}</p>
                     <p><strong class="font-semibold">Father/Guardian Name:</strong> {{ $minorParticipant->father_or_guardian_name }}</p>
                     <p><strong class="font-semibold">Father/Guardian Phone:</strong> {{ $minorParticipant->father_or_guardian_phone }}</p>
-                    <p><strong class="font-semibold">Activity Name:</strong> {{ $minorParticipant->activity_name }}</p>
+                    <p><strong class="font-semibold">Activity Name:</strong> {{ $minorParticipant->minorActivity->name ?? 'No activity selected' }}</p>
+                    {{-- <p><strong class="font-semibold">Activity Name:</strong> {{ $minorParticipant->activity_name }}</p> --}}
                     <p><strong class="font-semibold">Address:</strong> {{ $minorParticipant->address }}</p>
                     <p><strong class="font-semibold">Observation:</strong> {{ $minorParticipant->observation }}</p>
                 </div>

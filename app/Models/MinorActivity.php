@@ -20,4 +20,9 @@ class MinorActivity extends Model
         'city',
         'organizer_names',
     ];
+
+    public function minorParticipants()
+    {
+        return $this->hasMany(MinorParticipant::class, 'minor_activity_id');
+    }
 }

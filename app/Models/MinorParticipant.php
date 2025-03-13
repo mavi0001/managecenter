@@ -17,7 +17,14 @@ class MinorParticipant extends Model
         'father_or_guardian_name',
         'father_or_guardian_phone',
         'address',
-        'activity_name',
         'observation',
+        'minor_activity_id', 
     ];
+
+    public function minorActivity()
+    {
+        return $this->belongsTo(MinorActivity::class, 'minor_activity_id');
+    }
 }
+
+
