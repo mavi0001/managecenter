@@ -19,7 +19,12 @@ class AdultParticipant extends Model
         'email',
         'address',
         'phone_number',
-        'activity_name',
         'observation',
+        'adult_activity_id',
     ];
+
+    public function adultActivity()
+    {
+        return $this->belongsTo(AdultActivity::class, 'adult_activity_id');
+    }
 }

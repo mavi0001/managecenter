@@ -45,7 +45,7 @@
                                 <td class="px-6 py-4 text-[#191565]">{{ $participant->full_name }}</td>
                                 <td class="px-6 py-4 text-[#191565]">{{ $participant->age }}</td>
                                 <td class="px-6 py-4 text-[#191565]">{{ $participant->city }}</td>
-                                <td class="px-6 py-4 text-[#191565]">{{ $participant->activity_name }}</td>
+                                <td class="px-6 py-4 text-[#191565]">{{ $participant->minorActivity->activity_name }}</td>
                                 <td class="px-6 py-4 space-x-2">
                                     <!-- View Button -->
                                     <a href="{{ route('minor_participants.show', $participant->id) }}" class=" text-[#84D1C7] px-3 py-2 rounded-lg hover:bg-[#84D1C7] hover:text-white transition duration-300">

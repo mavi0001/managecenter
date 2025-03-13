@@ -46,11 +46,12 @@
                                 <td class="px-6 py-4 text-[#3A406D]">{{ $participant->age }}</td>
                                 <td class="px-6 py-4 text-[#3A406D]">{{ $participant->cin }}</td>
                                 <td class="px-6 py-4 text-[#3A406D]">{{ $participant->city }}</td>
-                                <td class="px-6 py-4 text-[#3A406D]">{{ $participant->activity_name }}</td>
+                                {{-- <td class="px-6 py-4 text-[#3A406D]">{{ $participant->adultActivity->activity_name }}</td> --}}
+                                <td class="px-6 py-4 text-[#3A406D]">{{ $participant->adultActivity ? $participant->adultActivity->activity_name : 'N/A' }}</td>
                                 <td class="px-6 py-4 space-x-2">
                                     <!-- View Button -->
                                     <a href="{{ route('adult-participants.show', $participant->id) }}" class="bg-[#9CAEEB] text-[#F9FAF9] px-3 py-2 rounded-lg hover:bg-[#3A406D] transition duration-300" title="View">
-                                        <i class="fas fa-eye fa-sm"></i> 
+                                        <i class="fas fa-eye fa-sm"></i>
                                     </a>
 
                                     <!-- Edit Button -->

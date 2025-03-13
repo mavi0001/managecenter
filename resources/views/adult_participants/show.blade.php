@@ -13,7 +13,7 @@
                     <p><strong>Email:</strong> {{ $adultParticipant->email }}</p>
                     <p><strong>Address:</strong> {{ $adultParticipant->address }}</p>
                     <p><strong>Phone Number:</strong> {{ $adultParticipant->phone_number }}</p>
-                    <p><strong>Activity Name:</strong> {{ $adultParticipant->activity_name }}</p>
+                    <p><strong class="font-semibold">Activity Name:</strong> {{ $adultParticipant->adultActivity->activity_name ?? 'No activity selected' }}</p>
                     <p><strong>Observation:</strong> {{ $adultParticipant->observation }}</p>
                 </div>
                 <div class="mt-6">

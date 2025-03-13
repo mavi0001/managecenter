@@ -65,9 +65,16 @@
                         </div>
 
                         <!-- Activity Name -->
-                        <div>
-                            <label for="activity_name" class="block text-sm font-medium text-[#3A406D]">Activity Name</label>
-                            <input type="text" name="activity_name" id="activity_name" value="{{ $adultParticipant->activity_name }}" class="mt-1 block w-full px-4 py-2 border border-[#9CAEEB] rounded-lg focus:ring-[#EF6B69] focus:border-[#EF6B69] transition duration-300" required>
+                        <div class="mb-4">
+                            <label for="adult_activity_id" class="block text-sm font-medium text-gray-700">Select Activity</label>
+                            <select name="adult_activity_id" id="adult_activity_id" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#DB1E59] focus:border-[#DB1E59]">
+                                <option value="">Select an activity</option>
+                                @foreach ($activities as $activity)
+                                    <option value="{{ $activity->id }}" {{ $adultParticipant->adult_activity_id == $activity->id ? 'selected' : '' }}>
+                                        {{ $activity->activity_name}}
+                                    </option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <!-- Observation -->

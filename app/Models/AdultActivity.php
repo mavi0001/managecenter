@@ -20,4 +20,9 @@ class AdultActivity extends Model
         'city',
         'organizer_names',
     ];
+
+    public function adultParticipants()
+    {
+        return $this->hasMany(AdultParticipant::class, 'adult_activity_id');
+    }
 }
