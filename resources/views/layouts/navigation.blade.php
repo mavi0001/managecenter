@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-[#191565] border-b border-[#B2BABD]">
+<nav x-data="{ open: false }" class="bg-[#191565] border-b ">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
@@ -8,23 +8,23 @@
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"
-                        class="text-[#ffff] hover:text-[#DB1E59]">
+                        class="text-[#FFFFFF] hover:text-[#D71D58]">
                         {{ __('Home') }}
                     </x-nav-link>
                     <x-nav-link :href="route('minor_participants.index')" :active="request()->routeIs('minor_participants.*')"
-                        class="text-[#ffff] hover:text-[#DB1E59]">
+                        class="text-[#FFFFFF] hover:text-[#D71D58]">
                         {{ __('Minor Participants') }}
                     </x-nav-link>
                     <x-nav-link :href="route('adult-participants.index')" :active="request()->routeIs('adult-participants.*')"
-                        class="text-[#ffff] hover:text-[#DB1E59]">
+                        class="text-[#FFFFFF] hover:text-[#D71D58]">
                         {{ __('Adult Participants') }}
                     </x-nav-link>
                     <x-nav-link :href="route('minor-activities.index')" :active="request()->routeIs('minor-activities.*')"
-                        class="text-[#ffff] hover:text-[#DB1E59]">
+                        class="text-[#FFFFFF] hover:text-[#D71D58]">
                         {{ __('Minor Activities') }}
                     </x-nav-link>
                     <x-nav-link :href="route('adult-activities.index')" :active="request()->routeIs('adult-activities.*')"
-                        class="text-[#ffff] hover:text-[#DB1E59]">
+                        class="text-[#FFFFFF] hover:text-[#D71D58]">
                         {{ __('Adult Activities') }}
                     </x-nav-link>
                 </div>
@@ -33,19 +33,19 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent
-                        text-sm leading-4 font-medium rounded-md text-[#ffff] bg-[#191565]
-                        hover:text-[#DB1E59] focus:outline-none transition ease-in-out duration-150">
+                        text-sm leading-4 font-medium rounded-md text-[#FFFFFF] bg-[#191565]
+                        hover:text-[#D71D58] focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
                         </button>
                     </x-slot>
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')" class="text-[#DB1E59]">
+                        <x-dropdown-link :href="route('profile.edit')" class="text-[#D71D58]">
                             {{ __('My profile') }}
                         </x-dropdown-link>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <x-dropdown-link :href="route('logout')"
-                            onclick="event.preventDefault(); this.closest('form').submit();" class="text-[#DB1E59]">
+                            onclick="event.preventDefault(); this.closest('form').submit();" class="text-[#D71D58]">
                                 {{ __('Log out') }}
                             </x-dropdown-link>
                         </form>
@@ -54,8 +54,8 @@
             </div>
             <div class="-me-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2
-                rounded-md text-[#ffff] hover:text-[#DB1E59]
-                hover:bg-[#84D1C7] focus:outline-none focus:bg-[#84D1C7] focus:text-[#DB1E59] transition duration-150 ease-in-out">
+                rounded-md text-[#FFFFFF] hover:text-[#D71D58]
+                hover:bg-[#84D1C7] focus:outline-none focus:bg-[#84D1C7] focus:text-[#D71D58] transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }"
                         class="inline-flex" stroke-linecap="round" stroke-linejoin="round"
@@ -71,23 +71,23 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"
-                class="text-[#ffff] hover:text-[#DB1E59]">
+                class="text-[#FFFFFF] hover:text-[#D71D58]">
                 {{ __('Home') }}
             </x-responsive-nav-link>
         </div>
         <div class="pt-4 pb-1 border-t border-[#B2BABD]">
             <div class="px-4">
-                <div class="font-medium text-base text-[#ffff]">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-[#ffff]">{{ Auth::user()->email }}</div>
+                <div class="font-medium text-base text-[#FFFFFF]">{{ Auth::user()->name }}</div>
+                <div class="font-medium text-sm text-[#FFFFFF]">{{ Auth::user()->email }}</div>
             </div>
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')" class="text-[#ffff] hover:text-[#DB1E59]">
+                <x-responsive-nav-link :href="route('profile.edit')" class="text-[#FFFFFF] hover:text-[#D71D58]">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
-                    this.closest('form').submit();" class="text-[#ffff] hover:text-[#DB1E59]">
+                    this.closest('form').submit();" class="text-[#FFFFFF] hover:text-[#D71D58]">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>

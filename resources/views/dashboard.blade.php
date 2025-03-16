@@ -6,6 +6,7 @@
                     <h3 class="text-4xl font-bold">{{ __("Welcome, admin you’re the heart of this platform!") }}</h3>
                     <p class="mt-4 text-lg text-[#3A406D]">Managing participants, organizing activities,
                         and bringing energy to the welcome center. With you, this space is set to thrive and shine</p>
+
                 </div>
             </div>
         </div>
