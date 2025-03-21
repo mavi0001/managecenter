@@ -26,7 +26,7 @@ class MinorParticipantController extends Controller
             return $query->where('full_name', 'like', "%{$search}%")
                         ->orWhere('city', 'like', "%{$search}%")
                         ->orWhere('minor_activity_id', 'like', "%{$search}%");
-        })->paginate(2);
+        })->paginate(4);
 
         return view('minor_participants.index', compact('participants'));
     }

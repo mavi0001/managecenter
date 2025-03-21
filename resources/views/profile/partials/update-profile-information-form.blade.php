@@ -1,10 +1,10 @@
 <section>
     <header>
-        <h2 class="text-lg font-medium text-[#3A406D]">
+        <h2 class="text-lg font-medium text-[#171463]">
             {{ __('Informations du profil') }}
         </h2>
 
-        <p class="mt-1 text-sm text-[#3A406D]">
+        <p class="mt-1 text-sm text-[#171463]">
             {{ __("Update your account's profile information and email address.") }}
         </p>
     </header>
@@ -30,16 +30,16 @@
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
                 <div>
-                    <p class="text-sm mt-2 text-gray-800">
+                    <p class="text-sm mt-2 text-[#171463]">
                         {{ __('Your email address is unverified.') }}
 
-                        <button form="send-verification" class="underline text-sm text-[#3A406D] hover:text-[#3A406D] rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <button form="send-verification" class="underline text-sm text-[#171463] hover:text-[#171463] rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#DA1C59]">
                             {{ __('Click here to re-send the verification email.') }}
                         </button>
                     </p>
 
                     @if (session('status') === 'verification-link-sent')
-                        <p class="mt-2 font-medium text-sm text-[#EF6B69]">
+                        <p class="mt-2 font-medium text-sm text-[#DA1C59]">
                             {{ __('A new verification link has been sent to your email address.') }}
                         </p>
                     @endif
@@ -56,7 +56,7 @@
                     x-show="show"
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-[#3A406D]"
+                    class="text-sm text-[#171463]"
                 >{{ __('Saved.') }}</p>
             @endif
         </div>
